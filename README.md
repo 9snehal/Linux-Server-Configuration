@@ -256,8 +256,8 @@ Restart Apache : `sudo service apache2 restart`
 
 3. Note: It might be some errors occured when you execute _init_.py file.It can be :
 related to client_secrets.json and fb_client_secrets.json files. You need to give absolute path to these files .change the 
-```CLIENT_ID = json.loads( open('client_secrets.json', 'r').read())['web']['client_id'] to
-open(r'/var/www/FlaskApp/FlaskApp/client_secrets.json', 'r').read())['web']['client_id']```
+CLIENT_ID = json.loads( open('client_secrets.json', 'r').read())['web']['client_id'] to
+open(r'/var/www/FlaskApp/FlaskApp/client_secrets.json', 'r').read())['web']['client_id']
 Similarly for `fb_client_secrets.json` file.
 
 4. check your errors in /var/log/apache2/error.log files type:
@@ -282,9 +282,9 @@ Similarly for `fb_client_secrets.json` file.
 
 2. click on Credentails --> edit
 
-3. add you hostname (http:// ec2-13-233-94-109.ap-south-1.compute.amazonaws.com) and public IP address (http://13.233.94.109) to Authorised JavaScript origins.
+3. add you hostname (http://ec2-13-233-94-109.ap-south-1.compute.amazonaws.com) and public IP address (http://13.233.94.109) to Authorised JavaScript origins.
 
-4. add hostname (http:// ec2-13-233-94-109.ap-south-1.compute.amazonaws.com/oauth2callback) to Authorised redirect URIs.
+4. add hostname (http://ec2-13-233-94-109.ap-south-1.compute.amazonaws.com/oauth2callback) to Authorised redirect URIs.
 
 5. update the client_secret.json file too(adding hostname and public IP address).
 
