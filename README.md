@@ -31,6 +31,9 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 2. Private Key - Can't be shared
 
+**Resources:** [How to Create Instance](https://medium.com/@mariasurmenok/creating-a-server-with-amazon-lightsail-11c377cf814c)
+
+
 # Follow the instructions provided to SSH into your server
 
 1. Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory).
@@ -82,7 +85,7 @@ Your new user(grader) is able to execute commands with administrative privileges
 2. Save keygen file into (/home/user/.ssh/project5).and fill the password . 2 keys will be generated, public key (project5.pub) and identification key(project5).
 
 3. Login into grader account using 
-           `ssh -v grader@"public_IP_address" -p 2200.` 
+           `ssh -v grader@"public_IP_address" -p 2200` 
 Type the password that you have fill during user creation (sudo adduser grader step 3) 
 snehal@sw-snehal:~$ ssh -v grader@13.233.94.109 -p 2200 grader@ip-13.233.94.109 password :
 if the password is correct , you will login as grader account: grader@ip-13.233.94.109:~$
@@ -153,8 +156,7 @@ Resources - timezone to UTC
 3. Install mod_wsgi using `sudo apt-get install libapache2-mod-wsgi`
 
 # Install git, clone and setup your Catalog App project.
-1. I
-nstall git using `sudo apt-get install git`
+1. Install git using `sudo apt-get install git`
 
 2. Use cd /var/www to move to the /var/www directory
 
@@ -313,3 +315,4 @@ update the fb_client_secret.json file too.
 
 # Restart Apache
 Restart Apache : `sudo service apache2 restart`
+
