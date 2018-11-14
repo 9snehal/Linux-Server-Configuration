@@ -155,6 +155,36 @@ Resources - timezone to UTC
 
 3. Install mod_wsgi using `sudo apt-get install libapache2-mod-wsgi`
 
+# Installing PostgreSQL Python dependencies:
+
+* Installing PostgreSQL Python dependencies:
+ $ sudo apt-get install libpq-dev python-dev
+
+* Installing PostgreSQL:
+  $ sudo apt-get install postgresql postgresql-contrib
+
+* Check if no remote connections are allowed :
+  $ sudo cat /etc/postgresql/9.3/main/pg_hba.conf
+
+* Login as postgres User (Default User), and get into PostgreSQL shell:
+  $ sudo su - postgres
+  $ psql
+
+* Create a new User named *catalog*:  `# CREATE USER catalog WITH PASSWORD 'password';`
+
+* Create a new DB named *catalog*: `# CREATE DATABASE catalog WITH OWNER catalog;`
+
+* Connect to the database *catalog* : `# \c catalog`
+
+* Revoke all rights: `# REVOKE ALL ON SCHEMA public FROM public;`
+
+* Lock down the permissions only to user *catalog*: `# GRANT ALL ON SCHEMA public TO catalog;`
+
+* Log out from PostgreSQL: `# \q`. Then return to the *grader* user: `$ exit`
+
+* Inside the Flask application edit database_setup.py,lotsofitems.py and _init_.py:
+engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
+
 # Install git, clone and setup your Catalog App project.
 1. Install git using `sudo apt-get install git`
 
@@ -177,11 +207,6 @@ Resources - timezone to UTC
 
 8. Rename final.py to _init_.py using 
     `sudo mv final.py _init_.py`
-
-9. Edit the database_setup.py file
- Edit database_setup.py, _init_.py and lotsofitems.py and change
- `engine = create_engine('sqlite:///toyshop.db')` to
- `engine = create_engine('sqlite:///var/www/FlaskApp/FlaskApp/catalogs.db')`
 
 # Create Virtalenvironment
 1. we will create a virtual environment for our flask application
