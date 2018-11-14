@@ -12,7 +12,7 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 # Launch a new Ubuntu Linux server instance on Amazon Lightsail
 
-* Login into [Amazon Lightsail!](https://signin.aws.amazon.com/) using an Amazon Web Services account.
+* Login into [Amazon Lightsail](https://signin.aws.amazon.com/) using an Amazon Web Services account.
 
 * Once you are login into the site, click Create instance.
 
@@ -207,7 +207,7 @@ nstall git using `sudo apt-get install git`
           <VirtualHost *:80>
 	          ServerName 52.24.125.52
 	          ServerAdmin qiaowei8993@gmail.com
-	          WSGIScriptAlias / /var/www/FlaskApp/  flaskapp.wsgi
+	          WSGIScriptAlias / /var/www/FlaskApp/FlaskApp/flaskapp.wsgi
 	          <Directory /var/www/FlaskApp/FlaskApp/>
 		          Order allow,deny
 		          Allow from all
@@ -280,7 +280,7 @@ Similarly for `fb_client_secrets.json` file.
 5. Make sure after you recorrect your error , restart the apache2 server.
 
 # Oauth Login
-1. go to http://www.hcidata.info/host2ip.cgi and get the host name of public IP address: 13.233.94.109 , Host Name: ec2-13-233-94-109.ap-south-1.compute.amazonaws.com
+1. go to [hcidata](http://www.hcidata.info/host2ip.cgi) and get the host name of public IP address: 13.233.94.109 , Host Name: ec2-13-233-94-109.ap-south-1.compute.amazonaws.com
 
 
 2. sudo nano /etc/apache2/sites-available/FlaskApp.conf and add the hostname below ServerAdmin: paste
@@ -292,7 +292,7 @@ Similarly for `fb_client_secrets.json` file.
 
 # Google Authorization steps:
 
-1. Go to  [ console.developer!](https://console.developers.google.com/)
+1. Go to  [ console.developer](https://console.developers.google.com/)
 
 2. click on Credentails --> edit
 
@@ -304,7 +304,7 @@ Similarly for `fb_client_secrets.json` file.
 
 # Facebook Authorization steps:
 
-* Go to[ developer.facebook!](https://developers.facebook.com/)
+* Go to[ developer.facebook](https://developers.facebook.com/)
 
 * open your application and click on Facebook Login --> settings.
 
