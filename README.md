@@ -10,9 +10,23 @@ SSH port- 2200
 Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 
-# Launch your Virtual Machine with your Udacity account
+# Launch a new Ubuntu Linux server instance on Amazon Lightsail
 
-Development Environment Information Details:-
+* Login into [Amazon Lightsail!](https://signin.aws.amazon.com/) using an Amazon Web Services account.
+
+* Once you are login into the site, click Create instance.
+
+* Choose Linux/Unix platform, OS Only and Ubuntu 16.04 LTS.
+
+* Choose a instance plan (I took the cheapest, $5/month).
+
+* Keep the default name provided by AWS or rename your instance.
+
+* Click the Create button to create the instance.
+
+* Wait for the instance to start up.
+
+* Development Environment Information Details:-
 1. Public IP Address - 13.233.94.109
 
 2. Private Key - Can't be shared
@@ -278,7 +292,7 @@ Similarly for `fb_client_secrets.json` file.
 
 # Google Authorization steps:
 
-1. Go to https://console.developers.google.com/
+1. Go to  [ console.developer!](https://console.developers.google.com/)
 
 2. click on Credentails --> edit
 
@@ -290,7 +304,7 @@ Similarly for `fb_client_secrets.json` file.
 
 # Facebook Authorization steps:
 
-* Go to https://developers.facebook.com/
+* Go to[ developer.facebook!](https://developers.facebook.com/)
 
 * open your application and click on Facebook Login --> settings.
 
