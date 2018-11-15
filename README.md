@@ -38,21 +38,21 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 1. Move the private key file into the folder ~/.ssh (where ~ is your environment's home directory).
                        
-`$ sudo mv ~/Downloads/snehal.pem ~/.ssh/`
+   `$ sudo mv ~/Downloads/snehal.pem ~/.ssh/`
 
 2. Change the key permission so that only owner can read and write
                       
-`$ chmod 600 ~/.ssh/snehal.pem`
+   `$ chmod 600 ~/.ssh/snehal.pem`
 
 3. SSH into the instance
                      
-`ssh -i ~/.ssh/snehal.pem root@13.233.94.109`
+   `ssh -i ~/.ssh/snehal.pem root@13.233.94.109`
 
 # Create New User
 
 1. Create a new user named grader
       
-`sudo adduser grader`
+   `sudo adduser grader`
 
 2. To check the User(grader) information :
    * ` sudo apt-get install finger`
@@ -61,7 +61,7 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 3. Give the grader the permission to sudo
 
-`sudo visudo`
+   `sudo visudo`
 
 (edit the sudoers file . it is save to use sudo visudo to edit the sudoers file otherwise file will not be saved)
 add the below line of code after root ALL=(ALL:ALL) ALL grader ALL=(ALL:ALL) ALL and save it (ctrl-X , then Y and Enter)
@@ -69,7 +69,7 @@ Your new user(grader) is able to execute commands with administrative privileges
 
 4. You can check the grader entry by below command: 
       
-`sudo cat /etc/sudoers`
+   `sudo cat /etc/sudoers`
 
 # Update all currently installed packages
 
@@ -95,7 +95,7 @@ Your new user(grader) is able to execute commands with administrative privileges
 
 3. Login into grader account using 
 
-`ssh -v grader@"public_IP_address" -p 2200` 
+   `ssh -v grader@"public_IP_address" -p 2200` 
 
 Type the password that you have fill during user creation (sudo adduser grader step 3) 
 snehal@sw-snehal:~$ ssh -v grader@13.233.94.109 -p 2200 grader@ip-13.233.94.109 password :
@@ -103,25 +103,25 @@ if the password is correct , you will login as grader account: grader@ip-13.233.
 
 4. make a directory in grader account :
  
-`sudo mkdir .ssh`
+   `sudo mkdir .ssh`
 
 5. make a authorized_keys file using 
         
-`touch .ssh/authorized_keys`
+   `touch .ssh/authorized_keys`
 
 6. from your local machine,copy the contents of public key(Project5.pub).
         
-`cat .ssh/project5.pub`
+   `cat .ssh/project5.pub`
 
 7. paste that contents on authorized_keys of grader account using
 
-`nano authorized_keys` and save it .
+   `nano authorized_keys` and save it .
 
 8. give the permissions : 
         
-`chmod 700 .ssh` and 
+   `chmod 700 .ssh` and 
    
-`chmod 644 .ssh/authorized_keys`
+   `chmod 644 .ssh/authorized_keys`
 
 9. do nano `/etc/ssh/sshd_config `, change PasswordAuthentication to no .
 
@@ -161,11 +161,11 @@ Resources - timezone to UTC
 
 1. Install unattended-upgrades if not already installed using command:
     `
-`$ sudo apt-get install unattended-upgrades`
+   `$ sudo apt-get install unattended-upgrades`
 
 2. Enable it using command:
  
-`$ sudo dpkg-reconfigure --priority=low unattended-upgrades`
+   `$ sudo dpkg-reconfigure --priority=low unattended-upgrades`
 
 # Install and configure Apache to serve a Python mod_wsgi application:
 1. install apache using `sudo apt-get install apache2`
@@ -178,15 +178,15 @@ Resources - timezone to UTC
 
 * Installing PostgreSQL Python dependencies:
   
-`$ sudo apt-get install libpq-dev python-dev`
+  `$ sudo apt-get install libpq-dev python-dev`
 
 * Installing PostgreSQL:
 
-`$ sudo apt-get install postgresql postgresql-contrib`
+  `$ sudo apt-get install postgresql postgresql-contrib`
 
 * Check if no remote connections are allowed :
   
-`$ sudo cat /etc/postgresql/9.3/main/pg_hba.conf`
+  `$ sudo cat /etc/postgresql/9.3/main/pg_hba.conf`
 
 * Login as postgres User (Default User), and get into PostgreSQL shell:
   * $ sudo su - postgres
@@ -254,7 +254,7 @@ engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
 
 1. Create FlaskApp.conf to edit: 
 
-`sudo nano /etc/apache2/sites-available/FlaskApp.conf`
+   `sudo nano /etc/apache2/sites-available/FlaskApp.conf`
 
 2. Add the following lines of code to the file to configure the virtual host.
 
@@ -277,16 +277,16 @@ engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
           </VirtualHost>
 
 3. Enable the virtual host with the following command: 
-                
-`sudo a2ensite FlaskApp`
+                 
+   `sudo a2ensite FlaskApp`
 
 # Create the .wsgi File
 
 1. Create the .wsgi File under /var/www/FlaskApp/FlaskApp:[where _init_.py file is present]
 
-` $ cd /var/www/FlaskApp/FlaskApp`
+   ` $ cd /var/www/FlaskApp/FlaskApp`
         
-` $ sudo nano flaskapp.wsgi` 
+   ` $ sudo nano flaskapp.wsgi` 
 
 2. Add the following lines of code to the flaskapp.wsgi file:
 
@@ -317,11 +317,11 @@ Restart Apache : `sudo service apache2 restart`
 # Run the application
 1. Go to the /var/www/catalog/catalog directory execute :
   
-`python database_setup.py`
+   `python database_setup.py`
 
-`python lotsofitems.py`
+   `python lotsofitems.py`
          
-`python __init__.py`
+   `python __init__.py`
 
 2. Restart Apache
 
@@ -345,6 +345,7 @@ Similarly for `fb_client_secrets.json` file.
 
 
 2. sudo nano /etc/apache2/sites-available/FlaskApp.conf and add the hostname below ServerAdmin: paste
+   
    ` ServerAlias ec2-13-233-94-109.ap-south-1.compute.amazonaws.com`
 
 3. enable the virtual host : `sudo a2ensite FlaskApp`
@@ -373,5 +374,7 @@ Similarly for `fb_client_secrets.json` file.
 update the fb_client_secret.json file too.
 
 # Restart Apache
-Restart Apache : `sudo service apache2 restart`
+Restart Apache : 
+
+  `sudo service apache2 restart`
 
