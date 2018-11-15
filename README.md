@@ -71,7 +71,7 @@ Your new user(grader) is able to execute commands with administrative privileges
 
 # Change the SSH port from 22 to 2200
 1. Login as root and open the ssdh_config file using below command:
-                 `root@ip-13.233.94.109:~# nano /etc/ssh/sshd_config`
+   * `root@ip-13.233.94.109:~# nano /etc/ssh/sshd_config`
 * change port from 22 to 2200
 * change PermitRootLogin without-password to PermitRootLogin no . it is disable root login.
 * change PasswordAuthentication from no to yes.
@@ -158,27 +158,27 @@ Resources - timezone to UTC
 # Installing PostgreSQL Python dependencies:
 
 * Installing PostgreSQL Python dependencies:
- $ sudo apt-get install libpq-dev python-dev
+  `$ sudo apt-get install libpq-dev python-dev`
 
 * Installing PostgreSQL:
-  $ sudo apt-get install postgresql postgresql-contrib
+  `$ sudo apt-get install postgresql postgresql-contrib`
 
 * Check if no remote connections are allowed :
-  $ sudo cat /etc/postgresql/9.3/main/pg_hba.conf
+  `$ sudo cat /etc/postgresql/9.3/main/pg_hba.conf`
 
 * Login as postgres User (Default User), and get into PostgreSQL shell:
-  $ sudo su - postgres
-  $ psql
+  * $ sudo su - postgres
+  * $ psql
 
-* Create a new User named *catalog*:  `# CREATE USER catalog WITH PASSWORD 'password';`
+* Create a new User named *catalogs*:  `# CREATE USER catalogs WITH PASSWORD 'password';`
 
-* Create a new DB named *catalog*: `# CREATE DATABASE catalog WITH OWNER catalog;`
+* Create a new DB named *catalogs*: `# CREATE DATABASE catalogs WITH OWNER catalogs;`
 
-* Connect to the database *catalog* : `# \c catalog`
+* Connect to the database *catalogs* : `# \c catalogs`
 
 * Revoke all rights: `# REVOKE ALL ON SCHEMA public FROM public;`
 
-* Lock down the permissions only to user *catalog*: `# GRANT ALL ON SCHEMA public TO catalog;`
+* Lock down the permissions only to user *catalogs*: `# GRANT ALL ON SCHEMA public TO catalogs;`
 
 * Log out from PostgreSQL: `# \q`. Then return to the *grader* user: `$ exit`
 
