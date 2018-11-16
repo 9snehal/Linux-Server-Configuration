@@ -259,8 +259,8 @@ engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
 2. Add the following lines of code to the file to configure the virtual host.
 
           <VirtualHost *:80>
-	          ServerName 52.24.125.52
-	          ServerAdmin qiaowei8993@gmail.com
+	          ServerName 13.233.94.109
+	          ServerAdmin snehalvnarkar@gmail.com
 	          WSGIScriptAlias / /var/www/FlaskApp/FlaskApp/flaskapp.wsgi
 	          <Directory /var/www/FlaskApp/FlaskApp/>
 		          Order allow,deny
