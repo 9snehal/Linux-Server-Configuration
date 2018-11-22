@@ -1,13 +1,13 @@
 # Linux-Server-Configuration[Book Catalog]
 Installation of a Linux distribution on a virtual machine and prepare it to host your web application(Item Catalog). It includes installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
-The EC2 URL is : http://ec2-13-233-94-109.ap-south-1.compute.amazonaws.com/
+The EC2 URL is : http://http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com/
 
-Local IP address: http://13.233.94.109/
+Local IP address: http://13.127.176.184/
 
 SSH port- 2200
 
-Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
+Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.127.176.184
 
 
 # Launch a new Ubuntu Linux server instance on Amazon Lightsail
@@ -27,7 +27,7 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 * Wait for the instance to start up.
 
 * Development Environment Information Details:-
-1. Public IP Address - 13.233.94.109
+1. Public IP Address - 13.127.176.184
 
 2. Private Key - Can't be shared
 
@@ -46,7 +46,7 @@ Login with: ssh -i ~/.ssh/snehal.pem -p 2200 grader@13.233.94.109
 
 3. SSH into the instance
                      
-   `ssh -i ~/.ssh/snehal.pem root@13.233.94.109`
+   `ssh -i ~/.ssh/snehal.pem root@13.127.176.184`
 
 # Create New User
 
@@ -80,7 +80,7 @@ Your new user(grader) is able to execute commands with administrative privileges
 
 # Change the SSH port from 22 to 2200
 1. Login as root and open the ssdh_config file using below command:
-   * `root@ip-13.233.94.109:~# nano /etc/ssh/sshd_config`
+   * `root@ip-13.127.176.184:~# nano /etc/ssh/sshd_config`
 * change port from 22 to 2200
 * change PermitRootLogin without-password to PermitRootLogin no . it is disable root login.
 * change PasswordAuthentication from no to yes.
@@ -127,7 +127,7 @@ if the password is correct , you will login as grader account: grader@ip-13.233.
 
 10. sudo service ssh restart.
 
-11. `ssh grader@13.233.94.109 -p 2200 -i ~/.ssh/project5` in new terminal .A pop-up window will open for authentication. just fill the password that you have fill during ssh-keygen creation.
+11. `ssh grader@13.127.176.184 -p 2200 -i ~/.ssh/project5` in new terminal .A pop-up window will open for authentication. just fill the password that you have fill during ssh-keygen creation.
 
 # Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
 
@@ -170,7 +170,7 @@ Resources - timezone to UTC
 # Install and configure Apache to serve a Python mod_wsgi application:
 1. install apache using `sudo apt-get install apache2`
 
-2. type 13.233.94.109 (public IP address) on URL . You will see the apache ubuntu default page .
+2. type 13.127.176.184 (public IP address) on URL . You will see the apache ubuntu default page .
 
 3. Install mod_wsgi using `sudo apt-get install libapache2-mod-wsgi`
 
@@ -206,7 +206,7 @@ Resources - timezone to UTC
 
 * Inside the Flask application edit database_setup.py,lotsofitems.py and _init_.py:
 
-engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
+engine = create_engine('postgresql://catalogs:yourPassword@localhost/catalogs')
 
 # Install git, clone and setup your Catalog App project.
 1. Install git using `sudo apt-get install git`
@@ -259,7 +259,7 @@ engine = create_engine('postgresql://catalog:yourPassword@localhost/catalog')
 2. Add the following lines of code to the file to configure the virtual host.
 
           <VirtualHost *:80>
-	          ServerName 13.233.94.109
+	          ServerName 13.127.176.184
 	          ServerAdmin snehalvnarkar@gmail.com
 	          WSGIScriptAlias / /var/www/FlaskApp/FlaskApp/flaskapp.wsgi
 	          <Directory /var/www/FlaskApp/FlaskApp/>
@@ -327,7 +327,7 @@ Restart Apache : `sudo service apache2 restart`
 
 * Restart Apache : `sudo service apache2 restart`
 
-3. Type public IPaddress (http://13.233.94.109/) on URL and you will see your Itemcatalog project.
+3. Type public IPaddress (http://13.127.176.184/) on URL and you will see your Itemcatalog project.
 
 4. Note: It might be some errors occured when you execute _init_.py file.It can be :
 related to client_secrets.json and fb_client_secrets.json files. You need to give absolute path to these files .change the 
@@ -346,7 +346,7 @@ Similarly for `fb_client_secrets.json` file.
 
 2. sudo nano /etc/apache2/sites-available/FlaskApp.conf and add the hostname below ServerAdmin: paste
    
-   ` ServerAlias ec2-13-233-94-109.ap-south-1.compute.amazonaws.com`
+   ` ServerAlias http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com`
 
 3. enable the virtual host : `sudo a2ensite FlaskApp`
 
@@ -358,9 +358,9 @@ Similarly for `fb_client_secrets.json` file.
 
 2. click on Credentails --> edit
 
-3. add you hostname (http://ec2-13-233-94-109.ap-south-1.compute.amazonaws.com) and public IP address (http://13.233.94.109) to Authorised JavaScript origins.
+3. add you hostname (http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com) and public IP address (http://13.233.94.109) to Authorised JavaScript origins.
 
-4. add hostname (http://ec2-13-233-94-109.ap-south-1.compute.amazonaws.com/oauth2callback) to Authorised redirect URIs.
+4. add hostname (http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com/oauth2callback) to Authorised redirect URIs.
 
 5. update the client_secret.json file too(adding hostname and public IP address).
 
