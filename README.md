@@ -1,7 +1,7 @@
 # Linux-Server-Configuration[Book Catalog]
 Installation of a Linux distribution on a virtual machine and prepare it to host your web application(Item Catalog). It includes installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
-The EC2 URL is : http://http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com/
+The EC2 URL is : http://ec2-13-127-176-184.ap-south-1.compute.amazonaws.com/
 
 Local IP address: http://13.127.176.184/
 
